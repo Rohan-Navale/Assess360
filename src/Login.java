@@ -1,8 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class Login extends JFrame {
 JTextField usn, password;
+JButton Login, Register;
     Login(){
         setSize(1500,800); // Set the Frame Size
         getContentPane().setBackground(new Color(255,255,255));
@@ -34,12 +36,21 @@ JTextField usn, password;
 
         RoundedTextField usnField = new RoundedTextField("  USN", 20, 15,2);
         usnField.setBounds(175, 307, 391, 59);
+        usnField.setBackground(Color.WHITE);
         add(usnField);
 
         RoundedTextField PasswordField = new RoundedTextField("  Password", 20, 15,2);
         PasswordField.setBounds(175, 380, 391, 59);
         add(PasswordField);
 
+//        Login = new RoundedButton("Clear", new Color(151,71,255), new Color(237,255,1));
+//        Login.setFont(new Font("Raleway", Font.BOLD,22));
+//        Login.addActionListener((ActionListener) this);
+//        Login.setBounds(404,514,163,44);
+//        add(Login);
+
+        RoundedButton roundedButton = new RoundedButton("Click Me", 40);
+        add(roundedButton);
 
         JPanel panel = new JPanel();
         panel.setBounds(0,0,750,800);
