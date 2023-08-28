@@ -11,17 +11,20 @@ public class Login extends JFrame {
         setLayout(null);
 
         ImageIcon originalIcon = new ImageIcon(ClassLoader.getSystemResource("Icons/LoginUiICon.png")); // Load the image
-        Image originalImage = originalIcon.getImage(); // Get the original image
-// Scale the original image to your preferred size
-        int width = 733; // Preferred width
-        int height = 518; // Preferred height
-        Image scaledImage = originalImage.getScaledInstance(width, height, Image.SCALE_SMOOTH);
-// Create a new ImageIcon from the scaled image
+        Image originalImage = originalIcon.getImage();
+        Image scaledImage = originalImage.getScaledInstance(733, 518, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(scaledImage);
-// Create a JLabel and set the scaled ImageIcon to it
         JLabel label = new JLabel(scaledIcon);
-        label.setBounds(759, 141, width, height); // Set the position and size of the JLabel
+        label.setBounds(759, 141, 733, 518); // Set the position and size of the JLabel
         add(label);
+
+        ImageIcon LogoIcon = new ImageIcon(ClassLoader.getSystemResource("Icons/Assess360Logo.png")); // Load the image
+        Image LogoImage = LogoIcon.getImage();
+        Image LogoscaledImage = LogoImage.getScaledInstance(180, 74, Image.SCALE_SMOOTH);
+        ImageIcon LogoscaledIcon = new ImageIcon(LogoscaledImage);
+        JLabel Logolabel = new JLabel(LogoscaledIcon);
+        Logolabel.setBounds(20, 25, 180, 74); // Set the position and size of the JLabel
+        add(Logolabel);
 
 
 
