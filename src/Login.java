@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Login extends JFrame {
-
+JTextField usn, password;
     Login(){
         setSize(1500,800); // Set the Frame Size
         getContentPane().setBackground(new Color(255,255,255));
@@ -26,7 +26,19 @@ public class Login extends JFrame {
         Logolabel.setBounds(20, 25, 180, 74); // Set the position and size of the JLabel
         add(Logolabel);
 
+        JLabel loginText = new JLabel("Login to Your Account");
+        loginText.setBounds(176,260,350,37);
+        loginText.setFont(new Font("Outfit",Font.BOLD,30));
+        loginText.setForeground(new Color(27,23,28));
+        add(loginText);
 
+        RoundedTextField usnField = new RoundedTextField("  USN", 20, 15,2);
+        usnField.setBounds(175, 307, 391, 59);
+        add(usnField);
+
+        RoundedTextField PasswordField = new RoundedTextField("  Password", 20, 15,2);
+        PasswordField.setBounds(175, 380, 391, 59);
+        add(PasswordField);
 
 
         JPanel panel = new JPanel();
