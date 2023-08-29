@@ -78,7 +78,6 @@ JButton Login, Register;
         Register.setContentAreaFilled(false);
         Register.setBorderPainted(false);
         Register.setBounds(313, 538, 162, 44);
-        //Login.addActionListener(this);
         Register.setFont(new Font("Raleway", Font.BOLD,18));
         add(Register);
 
