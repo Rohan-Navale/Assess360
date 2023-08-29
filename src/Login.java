@@ -1,6 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
 
 public class Login extends JFrame {
 JTextField usn, password;
@@ -27,16 +26,6 @@ JButton Login, Register;
         JLabel Logolabel = new JLabel(LogoscaledIcon);
         Logolabel.setBounds(20, 25, 180, 74); // Set the position and size of the JLabel
         add(Logolabel);
-
-//        ImageIcon NewLogoIcon = new ImageIcon(ClassLoader.getSystemResource("Icons/logo.png")); // Load the image
-//        Image NewLogoImage = NewLogoIcon.getImage();
-//        Image NewLogoscaledImage = NewLogoImage.getScaledInstance(290, 90, Image.SCALE_SMOOTH);
-//        ImageIcon NewLogoscaledIcon = new ImageIcon(NewLogoscaledImage);
-//        JLabel NewLogolabel = new JLabel(NewLogoscaledIcon);
-//        NewLogolabel.setBounds(252, 170, 290, 90); // Set the position and size of the JLabel
-//        add(NewLogolabel);
-
-
 
         JLabel loginText = new JLabel("Login to Your Account");
         loginText.setBounds(176,260,350,37);
@@ -97,8 +86,6 @@ JButton Login, Register;
         panel.setBounds(0,0,750,800);
         panel.setBackground(new Color(216, 180, 248));
         add(panel);
-
-
 
     }
     public static void main(String[] args) {
