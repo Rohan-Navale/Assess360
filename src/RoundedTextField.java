@@ -1,39 +1,40 @@
 import javax.swing.*;
 import javax.swing.border.AbstractBorder;
 import java.awt.*;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 
 public class RoundedTextField extends JTextField {
     private int radius;
-    private int borderWidth;
-    private String initialText;
+    private String placeholder;
 
-    public RoundedTextField(String placeholder, int columns, int radius, int borderWidth) {
-        super(placeholder, columns);
+    public RoundedTextField(int columns, int radius, String placeholder) {
+        super(columns);
         this.radius = radius;
-        this.borderWidth = borderWidth;
-        this.initialText = placeholder;
+        this.placeholder = placeholder;
 
         setBackground(Color.WHITE);
         setCaretColor(Color.BLACK);
-        setForeground(Color.GRAY);
-        setFont(new Font("Raleway", Font.BOLD, 22));
+        setFont(new Font("Raleway", Font.BOLD, 20));
         setOpaque(false);
-        setBorder(new RoundedBorder(radius, borderWidth));
+        setBorder(new RoundedBorder(radius));
 
-        setText(placeholder); // Set initial text
-        addFocusListener(new java.awt.event.FocusAdapter() {
+        setText(placeholder);
+        setForeground(Color.GRAY);
+
+        addFocusListener(new FocusListener() {
             @Override
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                if (getText().trim().equals(initialText.trim())) {
+            public void focusGained(FocusEvent e) {
+                if (getText().equals(placeholder)) {
                     setText("");
                     setForeground(Color.BLACK);
                 }
             }
 
             @Override
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                if (getText().trim().isEmpty()) {
-                    setText(initialText);
+            public void focusLost(FocusEvent e) {
+                if (getText().isEmpty()) {
+                    setText(placeholder);
                     setForeground(Color.GRAY);
                 }
             }
@@ -42,20 +43,20 @@ public class RoundedTextField extends JTextField {
 
     class RoundedBorder extends AbstractBorder {
         private int radius;
-        private int borderWidth;
 
-        public RoundedBorder(int radius, int borderWidth) {
+        public RoundedBorder(int radius) {
             this.radius = radius;
-            this.borderWidth = borderWidth;
         }
 
         @Override
         public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
             Graphics2D g2d = (Graphics2D) g;
             g2d.setColor(getForeground());
-            g2d.setStroke(new BasicStroke(borderWidth));
+            g2d.setStroke(new BasicStroke(1));
             g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-            g2d.drawRoundRect(x, y, width - 1, height - 1, radius, radius);
+
+            int arc = radius * 2;
+            g2d.drawRoundRect(x, y, width - 1, height - 1, arc, arc);
         }
     }
 }
