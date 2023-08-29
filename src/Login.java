@@ -75,16 +75,23 @@ JButton Login, Register;
         Login.setFont(new Font("Raleway", Font.BOLD,20));
         add(Login);
 
-        Register = new RoundedButton("Register",new Color(251,240,178),Color.BLACK);
-        Register.setBounds(567, 40, 162, 44);
-        //Login.addActionListener(this);
-        Register.setFont(new Font("Raleway", Font.BOLD,20));
-        add(Register);
-
         JLabel forgot = new JLabel("<html><u>Forgot Password?</u></html>");
         forgot.setBounds(176,450,130,25);
         forgot.setFont(new Font("Raleway",Font.BOLD,14));
         add(forgot);
+
+        JLabel newUser = new JLabel("New User?");
+        newUser.setBounds(276,550,130,25);
+        newUser.setFont(new Font("Raleway",Font.BOLD,14));
+        add(newUser);
+
+        Register = new JButton("<html><u>Sign Up</u><html>");
+        Register.setContentAreaFilled(false);
+        Register.setBorderPainted(false);
+        Register.setBounds(313, 538, 162, 44);
+        //Login.addActionListener(this);
+        Register.setFont(new Font("Raleway", Font.BOLD,18));
+        add(Register);
 
         JPanel panel = new JPanel();
         panel.setBounds(0,0,750,800);
