@@ -15,7 +15,7 @@ public class RoundedTextField extends JTextField {
 
         setBackground(Color.WHITE);
         setCaretColor(Color.BLACK);
-        setFont(new Font("Raleway", Font.BOLD, 20));
+        setFont(new Font("Raleway", Font.BOLD, 18));
         setOpaque(false);
         setBorder(new RoundedBorder(radius));
 
