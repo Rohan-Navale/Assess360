@@ -20,7 +20,7 @@ JButton Login, Register;
         label.setBounds(759, 141, 733, 518); // Set the position and size of the JLabel
         add(label);
 
-        ImageIcon LogoIcon = new ImageIcon(ClassLoader.getSystemResource("Icons/Assess360Logo.png")); // Load the image
+        ImageIcon LogoIcon = new ImageIcon(ClassLoader.getSystemResource("Icons/logo.png")); // Load the image
         Image LogoImage = LogoIcon.getImage();
         Image LogoscaledImage = LogoImage.getScaledInstance(180, 74, Image.SCALE_SMOOTH);
         ImageIcon LogoscaledIcon = new ImageIcon(LogoscaledImage);
@@ -28,51 +28,61 @@ JButton Login, Register;
         Logolabel.setBounds(20, 25, 180, 74); // Set the position and size of the JLabel
         add(Logolabel);
 
+//        ImageIcon NewLogoIcon = new ImageIcon(ClassLoader.getSystemResource("Icons/logo.png")); // Load the image
+//        Image NewLogoImage = NewLogoIcon.getImage();
+//        Image NewLogoscaledImage = NewLogoImage.getScaledInstance(290, 90, Image.SCALE_SMOOTH);
+//        ImageIcon NewLogoscaledIcon = new ImageIcon(NewLogoscaledImage);
+//        JLabel NewLogolabel = new JLabel(NewLogoscaledIcon);
+//        NewLogolabel.setBounds(252, 170, 290, 90); // Set the position and size of the JLabel
+//        add(NewLogolabel);
+
+
+
         JLabel loginText = new JLabel("Login to Your Account");
         loginText.setBounds(176,260,350,37);
-        loginText.setFont(new Font("Outfit",Font.PLAIN,26));
+        loginText.setFont(new Font("Outfit",Font.BOLD,26));
         loginText.setForeground(new Color(27,23,28));
         add(loginText);
 
         ImageIcon UserIcon = new ImageIcon(ClassLoader.getSystemResource("Icons/useer.png")); // Load the image
         Image UserImage = UserIcon.getImage();
-        Image UserscaledImage = UserImage.getScaledInstance(25, 25, Image.SCALE_SMOOTH);
+        Image UserscaledImage = UserImage.getScaledInstance(23, 23, Image.SCALE_SMOOTH);
         ImageIcon UserscaledIcon = new ImageIcon(UserscaledImage);
         JLabel Userlabel = new JLabel(UserscaledIcon);
-        Userlabel.setBounds(135, 320, 25, 25); // Set the position and size of the JLabel
+        Userlabel.setBounds(135, 318, 23, 23); // Set the position and size of the JLabel
         add(Userlabel);
 
         RoundedTextField usnField = new RoundedTextField(20, 15, "  USN");
-        usnField.setBounds(175, 307, 391, 59);
+        usnField.setBounds(175, 307, 391, 50);
         usnField.setBackground(Color.WHITE);
         add(usnField);
 
         ImageIcon LockIcon = new ImageIcon(ClassLoader.getSystemResource("Icons/Lock.png")); // Load the image
         Image LockImage = LockIcon.getImage();
-        Image LockscaledImage = LockImage.getScaledInstance(26, 26, Image.SCALE_SMOOTH);
+        Image LockscaledImage = LockImage.getScaledInstance(24, 24, Image.SCALE_SMOOTH);
         ImageIcon LockscaledIcon = new ImageIcon(LockscaledImage);
         JLabel Locklabel = new JLabel(LockscaledIcon);
-        Locklabel.setBounds(135, 393, 26, 26); // Set the position and size of the JLabel
+        Locklabel.setBounds(135, 382, 24, 24); // Set the position and size of the JLabel
         add(Locklabel);
 
         RoundedTextField PasswordField = new RoundedTextField(20, 15, "  Password");
-        PasswordField.setBounds(175, 380, 391, 59);
+        PasswordField.setBounds(175, 371, 391, 50);
         add(PasswordField);
 
         Login = new RoundedButton("Log In",new Color(202,237,255),Color.BLACK);
-        Login.setBounds(404, 460, 163, 44);
+        Login.setBounds(404, 445, 163, 44);
         //Login.addActionListener(this);
-        Login.setFont(new Font("Raleway", Font.BOLD,16));
+        Login.setFont(new Font("Raleway", Font.BOLD,20));
         add(Login);
 
-        Register = new RoundedButton("Register",new Color(255,255,255),Color.BLACK);
+        Register = new RoundedButton("Register",new Color(251,240,178),Color.BLACK);
         Register.setBounds(567, 40, 162, 44);
         //Login.addActionListener(this);
-        Register.setFont(new Font("Raleway", Font.BOLD,16));
+        Register.setFont(new Font("Raleway", Font.BOLD,20));
         add(Register);
 
         JLabel forgot = new JLabel("<html><u>Forgot Password?</u></html>");
-        forgot.setBounds(176,473,130,25);
+        forgot.setBounds(176,450,130,25);
         forgot.setFont(new Font("Raleway",Font.BOLD,14));
         add(forgot);
 
