@@ -1,42 +1,50 @@
 import javax.swing.*;
-import javax.swing.border.AbstractBorder;
 import java.awt.*;
 import java.awt.geom.RoundRectangle2D;
 
 public class RoundedButton extends JButton {
-    private int radius;
 
-    public RoundedButton(String text, int radius) {
+    private Color bgColor;
+    private Color textColor;
+
+    public RoundedButton(String text, Color bgColor, Color textColor) {
         super(text);
-        this.radius = radius;
-
-        setContentAreaFilled(false);
-        setFocusPainted(false);
-        setOpaque(false);
-        setBorder(new RoundedBorder(radius));
-
-        setForeground(Color.BLACK); // Set text color
-        setBackground(new Color(220, 220, 220)); // Set background color
-        setFont(new Font("Raleway", Font.BOLD, 16));
+        this.bgColor = bgColor;
+        this.textColor = textColor;
+        setupButton();
     }
 
-    class RoundedBorder extends AbstractBorder {
-        private int radius;
+    private void setupButton() {
+        setOpaque(false);
+        setContentAreaFilled(false);
+        setFocusPainted(false);
+        setForeground(textColor);
+        setFont(new Font("Roboto", Font.BOLD, 14));
+        setBorderPainted(false);
+        setHorizontalAlignment(SwingConstants.CENTER); // Center the text horizontally
+        setVerticalAlignment(SwingConstants.CENTER);
+        setMargin(new Insets(10, 20, 10, 20));
+    }
 
-        public RoundedBorder(int radius) {
-            this.radius = radius;
+    @Override
+    protected void paintComponent(Graphics g) {
+        Graphics2D g2 = (Graphics2D) g.create();
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+        RoundRectangle2D.Float roundRect = new RoundRectangle2D.Float(
+                0, 0, getWidth() - 1, getHeight() - 1, 35, 44);
+
+        if (getModel().isArmed()) {
+            g2.setColor(bgColor.darker());
+        } else if (getModel().isRollover()) {
+            g2.setColor(bgColor.brighter());
+        } else {
+            g2.setColor(bgColor);
         }
 
-        @Override
-        public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
-            Graphics2D g2d = (Graphics2D) g;
-            g2d.setColor(getForeground());
-            g2d.setStroke(new BasicStroke(2)); // Set border width
-            g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        g2.fill(roundRect);
 
-            // Create a rounded rectangle shape for the button
-            Shape shape = new RoundRectangle2D.Double(x, y, width - 1, height - 1, radius, radius);
-            g2d.draw(shape);
-        }
+        super.paintComponent(g2);
+        g2.dispose();
     }
 }
