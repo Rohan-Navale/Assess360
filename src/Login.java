@@ -60,7 +60,6 @@ JButton Login, Register;
 
         Login = new RoundedButton("Log In",new Color(202,237,255),Color.BLACK);
         Login.setBounds(404, 445, 163, 44);
-        //Login.addActionListener(this);
         Login.setFont(new Font("Raleway", Font.BOLD,20));
         add(Login);
 
