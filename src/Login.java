@@ -30,16 +30,32 @@ JButton Login, Register;
 
         JLabel loginText = new JLabel("Login to Your Account");
         loginText.setBounds(176,260,350,37);
-        loginText.setFont(new Font("Outfit",Font.BOLD,30));
+        loginText.setFont(new Font("Outfit",Font.PLAIN,26));
         loginText.setForeground(new Color(27,23,28));
         add(loginText);
 
-        RoundedTextField usnField = new RoundedTextField("  USN", 20, 15,2);
+        ImageIcon UserIcon = new ImageIcon(ClassLoader.getSystemResource("Icons/useer.png")); // Load the image
+        Image UserImage = UserIcon.getImage();
+        Image UserscaledImage = UserImage.getScaledInstance(25, 25, Image.SCALE_SMOOTH);
+        ImageIcon UserscaledIcon = new ImageIcon(UserscaledImage);
+        JLabel Userlabel = new JLabel(UserscaledIcon);
+        Userlabel.setBounds(135, 320, 25, 25); // Set the position and size of the JLabel
+        add(Userlabel);
+
+        RoundedTextField usnField = new RoundedTextField(20, 15, "  USN");
         usnField.setBounds(175, 307, 391, 59);
         usnField.setBackground(Color.WHITE);
         add(usnField);
 
-        RoundedTextField PasswordField = new RoundedTextField("  Password", 20, 15,2);
+        ImageIcon LockIcon = new ImageIcon(ClassLoader.getSystemResource("Icons/Lock.png")); // Load the image
+        Image LockImage = LockIcon.getImage();
+        Image LockscaledImage = LockImage.getScaledInstance(26, 26, Image.SCALE_SMOOTH);
+        ImageIcon LockscaledIcon = new ImageIcon(LockscaledImage);
+        JLabel Locklabel = new JLabel(LockscaledIcon);
+        Locklabel.setBounds(135, 393, 26, 26); // Set the position and size of the JLabel
+        add(Locklabel);
+
+        RoundedTextField PasswordField = new RoundedTextField(20, 15, "  Password");
         PasswordField.setBounds(175, 380, 391, 59);
         add(PasswordField);
 
