@@ -43,14 +43,16 @@ JButton Login, Register;
         PasswordField.setBounds(175, 380, 391, 59);
         add(PasswordField);
 
-//        Login = new RoundedButton("Clear", new Color(151,71,255), new Color(237,255,1));
-//        Login.setFont(new Font("Raleway", Font.BOLD,22));
-//        Login.addActionListener((ActionListener) this);
-//        Login.setBounds(404,514,163,44);
-//        add(Login);
+        Login = new RoundedButton("Log In",new Color(202,237,255),Color.BLACK);
+        Login.setBounds(404, 460, 163, 44);
+        //Login.addActionListener(this);
+        Login.setFont(new Font("Roboto", Font.BOLD,16));
+        add(Login);
 
-        RoundedButton roundedButton = new RoundedButton("Click Me", 40);
-        add(roundedButton);
+        JLabel forgot = new JLabel("<html><u>Forgot Password?</u></html>");
+        forgot.setBounds(176,473,130,25);
+        forgot.setFont(new Font("Raleway",Font.BOLD,14));
+        add(forgot);
 
         JPanel panel = new JPanel();
         panel.setBounds(0,0,750,800);
