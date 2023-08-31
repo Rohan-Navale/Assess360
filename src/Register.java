@@ -18,8 +18,16 @@ public class Register extends JFrame {
         Logolabel.setBounds(20, 25, 180, 74); // Set the position and size of the JLabel
         add(Logolabel);
 
-        JLabel text  = new JLabel("Enter Your Details");
-        text.setFont(new Font("Rale-way",Font.BOLD, 20));
+        ImageIcon originalIcon = new ImageIcon(ClassLoader.getSystemResource("Icons/RegisterUiICon.png")); // Load the image
+        Image originalImage = originalIcon.getImage();
+        Image scaledImage = originalImage.getScaledInstance(524, 514, Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(scaledImage);
+        JLabel label = new JLabel(scaledIcon);
+        label.setBounds(92, 143, 524, 514); // Set the position and size of the JLabel
+        add(label);
+
+        JLabel text  = new JLabel("Enter Your Details:");
+        text.setFont(new Font("Outfit",Font.BOLD, 20));
         text.setBounds(767,20,300,40);
         text.setForeground(Color.BLACK);
         add(text);
@@ -64,7 +72,7 @@ public class Register extends JFrame {
         mail.setBackground(Color.WHITE);
         add(mail);
 
-        submit = new RoundedButton("Submit",new Color(255,119,234),Color.WHITE);
+        submit = new RoundedButton("Submit",new Color(186,104,200),Color.WHITE);
         submit.setBounds(1313, 710, 163, 44);
         submit.setFont(new Font("Raleway", Font.BOLD,20));
         add(submit);
