@@ -41,7 +41,7 @@ JButton Login, Register;
         Userlabel.setBounds(135, 318, 23, 23); // Set the position and size of the JLabel
         add(Userlabel);
 
-        RoundedTextField usnField = new RoundedTextField(20, 15, "  USN");
+        RoundedTextField usnField = new RoundedTextField(20, 15, 10,"USN");
         usnField.setBounds(175, 307, 391, 50);
         usnField.setBackground(Color.WHITE);
         add(usnField);
@@ -54,7 +54,7 @@ JButton Login, Register;
         Locklabel.setBounds(135, 382, 24, 24); // Set the position and size of the JLabel
         add(Locklabel);
 
-        RoundedTextField PasswordField = new RoundedTextField(20, 15, "  Password");
+        RoundedTextField PasswordField = new RoundedTextField(20, 15, 10,"Password");
         PasswordField.setBounds(175, 371, 391, 50);
         add(PasswordField);
 
