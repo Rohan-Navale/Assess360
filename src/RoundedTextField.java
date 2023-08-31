@@ -6,11 +6,13 @@ import java.awt.event.FocusListener;
 
 public class RoundedTextField extends JTextField {
     private int radius;
+    private int padding; // Add padding variable
     private String placeholder;
 
-    public RoundedTextField(int columns, int radius, String placeholder) {
+    public RoundedTextField(int columns, int radius, int padding, String placeholder) {
         super(columns);
         this.radius = radius;
+        this.padding = padding; // Initialize padding
         this.placeholder = placeholder;
 
         setBackground(Color.WHITE);
@@ -39,6 +41,15 @@ public class RoundedTextField extends JTextField {
                 }
             }
         });
+    }
+
+    @Override
+    public Insets getInsets() {
+        int top = padding;
+        int left = padding;
+        int bottom = padding;
+        int right = padding;
+        return new Insets(top, left, bottom, right);
     }
 
     class RoundedBorder extends AbstractBorder {
