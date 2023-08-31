@@ -19,7 +19,7 @@ public class RoundedButton extends JButton {
         setContentAreaFilled(false);
         setFocusPainted(false);
         setForeground(textColor);
-        setFont(new Font("Roboto", Font.BOLD, 14));
+        setFont(new Font("Rale-way", Font.BOLD, 12));
         setBorderPainted(false);
         setHorizontalAlignment(SwingConstants.CENTER); // Center the text horizontally
         setVerticalAlignment(SwingConstants.CENTER);

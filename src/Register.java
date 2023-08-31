@@ -33,47 +33,57 @@ public class Register extends JFrame {
         add(text);
 
         RoundedTextField usn = new RoundedTextField(20, 15, 10,"USN");
-        usn.setBounds(70, 70, 450, 60);
+        usn.setBounds(70, 70, 450, 50);
         usn.setBackground(Color.WHITE);
         add(usn);
 
+        RoundedTextField password = new RoundedTextField(20, 15, 10,"Set Password");
+        password.setBounds(70, 140, 450, 50);
+        password.setBackground(Color.WHITE);
+        add(password);
+
+        JLabel passtext = new JLabel("Remember your password for future use");
+        passtext.setBounds(80,187,500,20);
+        passtext.setFont(new Font("Raleway",Font.PLAIN,10));
+        passtext.setForeground(Color.red);
+        add(passtext);
+
         RoundedTextField name = new RoundedTextField(20, 15, 10,"Name");
-        name.setBounds(70, 150, 450, 60);
+        name.setBounds(70, 215, 450, 50);
         name.setBackground(Color.WHITE);
         add(name);
 
         RoundedTextField dept = new RoundedTextField(20, 15, 10,"Department");
-        dept.setBounds(70, 230, 450, 60);
+        dept.setBounds(70, 286, 450, 50);
         dept.setBackground(Color.WHITE);
         add(dept);
 
         RoundedTextField year = new RoundedTextField(20, 15, 10,"Year");
-        year.setBounds(70, 310, 450, 60);
+        year.setBounds(70, 355, 450, 50);
         year.setBackground(Color.WHITE);
         add(year);
 
         RoundedTextField sec = new RoundedTextField(20, 15, 10,"Section");
-        sec.setBounds(70, 390, 450, 60);
-        sec.setBackground(Color.WHITE);
+        sec.setBounds(70, 426, 450, 50);
         add(sec);
 
         RoundedTextField dob = new RoundedTextField(20, 15, 10,"Date of Birth");
-        dob.setBounds(70, 470, 450, 60);
+        dob.setBounds(70, 495, 450, 50);
         dob.setBackground(Color.WHITE);
         add(dob);
 
         RoundedTextField contact = new RoundedTextField(20, 15, 10,"Contact No.");
-        contact.setBounds(70, 550, 450, 60);
+        contact.setBounds(70, 566, 450, 50);
         contact.setBackground(Color.WHITE);
         add(contact);
 
         RoundedTextField mail = new RoundedTextField(20, 15, 10,"Email Address");
-        mail.setBounds(70, 630, 450, 60);
+        mail.setBounds(70, 635, 450, 50);
         mail.setBackground(Color.WHITE);
         add(mail);
 
         submit = new RoundedButton("Submit",new Color(186,104,200),Color.WHITE);
-        submit.setBounds(550, 710, 163, 44);
+        submit.setBounds(550, 705, 163, 44);
         submit.setFont(new Font("Raleway", Font.BOLD,20));
         add(submit);
 
