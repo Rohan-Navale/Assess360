@@ -12,10 +12,10 @@ public class Register extends JFrame {
 
         ImageIcon LogoIcon = new ImageIcon(ClassLoader.getSystemResource("Icons/logo.png")); // Load the image
         Image LogoImage = LogoIcon.getImage();
-        Image LogoscaledImage = LogoImage.getScaledInstance(180, 74, Image.SCALE_SMOOTH);
+        Image LogoscaledImage = LogoImage.getScaledInstance(160, 60, Image.SCALE_SMOOTH);
         ImageIcon LogoscaledIcon = new ImageIcon(LogoscaledImage);
         JLabel Logolabel = new JLabel(LogoscaledIcon);
-        Logolabel.setBounds(20, 25, 180, 74); // Set the position and size of the JLabel
+        Logolabel.setBounds(550, 5, 160, 60); // Set the position and size of the JLabel
         add(Logolabel);
 
         ImageIcon originalIcon = new ImageIcon(ClassLoader.getSystemResource("Icons/RegisterUiICon.png")); // Load the image
@@ -23,62 +23,62 @@ public class Register extends JFrame {
         Image scaledImage = originalImage.getScaledInstance(524, 514, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(scaledImage);
         JLabel label = new JLabel(scaledIcon);
-        label.setBounds(92, 143, 524, 514); // Set the position and size of the JLabel
+        label.setBounds(875, 143, 524, 514); // Set the position and size of the JLabel
         add(label);
 
         JLabel text  = new JLabel("Enter Your Details:");
         text.setFont(new Font("Outfit",Font.BOLD, 20));
-        text.setBounds(767,20,300,40);
+        text.setBounds(50,20,300,40);
         text.setForeground(Color.BLACK);
         add(text);
 
         RoundedTextField usn = new RoundedTextField(20, 15, 10,"USN");
-        usn.setBounds(900, 70, 450, 60);
+        usn.setBounds(70, 70, 450, 60);
         usn.setBackground(Color.WHITE);
         add(usn);
 
         RoundedTextField name = new RoundedTextField(20, 15, 10,"Name");
-        name.setBounds(900, 150, 450, 60);
+        name.setBounds(70, 150, 450, 60);
         name.setBackground(Color.WHITE);
         add(name);
 
         RoundedTextField dept = new RoundedTextField(20, 15, 10,"Department");
-        dept.setBounds(900, 230, 450, 60);
+        dept.setBounds(70, 230, 450, 60);
         dept.setBackground(Color.WHITE);
         add(dept);
 
         RoundedTextField year = new RoundedTextField(20, 15, 10,"Year");
-        year.setBounds(900, 310, 450, 60);
+        year.setBounds(70, 310, 450, 60);
         year.setBackground(Color.WHITE);
         add(year);
 
         RoundedTextField sec = new RoundedTextField(20, 15, 10,"Section");
-        sec.setBounds(900, 390, 450, 60);
+        sec.setBounds(70, 390, 450, 60);
         sec.setBackground(Color.WHITE);
         add(sec);
 
         RoundedTextField dob = new RoundedTextField(20, 15, 10,"Date of Birth");
-        dob.setBounds(900, 470, 450, 60);
+        dob.setBounds(70, 470, 450, 60);
         dob.setBackground(Color.WHITE);
         add(dob);
 
         RoundedTextField contact = new RoundedTextField(20, 15, 10,"Contact No.");
-        contact.setBounds(900, 550, 450, 60);
+        contact.setBounds(70, 550, 450, 60);
         contact.setBackground(Color.WHITE);
         add(contact);
 
         RoundedTextField mail = new RoundedTextField(20, 15, 10,"Email Address");
-        mail.setBounds(900, 630, 450, 60);
+        mail.setBounds(70, 630, 450, 60);
         mail.setBackground(Color.WHITE);
         add(mail);
 
         submit = new RoundedButton("Submit",new Color(186,104,200),Color.WHITE);
-        submit.setBounds(1313, 710, 163, 44);
+        submit.setBounds(550, 710, 163, 44);
         submit.setFont(new Font("Raleway", Font.BOLD,20));
         add(submit);
 
         JPanel panel = new JPanel();
-        panel.setBounds(750,0,750,800);
+        panel.setBounds(0,0,750,800);
         panel.setBackground(new Color(255, 255, 255));
         add(panel);
 
