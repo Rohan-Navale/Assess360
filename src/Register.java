@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
 
+
+
 public class Register extends JFrame {
     JButton submit;
     Register(){
@@ -45,7 +47,7 @@ public class Register extends JFrame {
         JLabel passtext = new JLabel("Remember your password for future use");
         passtext.setBounds(80,187,500,20);
         passtext.setFont(new Font("Raleway",Font.PLAIN,10));
-        passtext.setForeground(Color.red);
+        passtext.setForeground(Color.blue);
         add(passtext);
 
         RoundedTextField name = new RoundedTextField(20, 15, 10,"Name");
@@ -53,10 +55,15 @@ public class Register extends JFrame {
         name.setBackground(Color.WHITE);
         add(name);
 
-        RoundedTextField dept = new RoundedTextField(20, 15, 10,"Department");
-        dept.setBounds(70, 286, 450, 50);
-        dept.setBackground(Color.WHITE);
-        add(dept);
+        String[] departments = {"AE", "CE", "CSE", "ISE", "ECE", "EEE", "ME"};
+        RoundedComboBox deptComboBox = new RoundedComboBox(departments, 15);
+        deptComboBox.setBounds(70, 286, 450, 50);
+        add(deptComboBox);
+        
+//        RoundedTextField dept = new RoundedTextField(20, 15, 10,"Department");
+//        dept.setBounds(70, 286, 450, 50);
+//        dept.setBackground(Color.WHITE);
+//        add(dept);
 
         RoundedTextField year = new RoundedTextField(20, 15, 10,"Year");
         year.setBounds(70, 355, 450, 50);
