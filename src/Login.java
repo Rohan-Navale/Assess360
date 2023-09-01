@@ -2,8 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Login extends JFrame {
-JTextField usn, password;
-JButton Login, Register;
+    JTextField usn, password;
+    JButton Login, Register;
     Login(){
         setSize(1500,800); // Set the Frame Size
         getContentPane().setBackground(new Color(255,255,255));
