@@ -1,10 +1,13 @@
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
-
+import com.toedter.calendar.JDateChooser;
 
 
 public class Register extends JFrame {
     JButton submit;
+    JDateChooser date;
     Register(){
         setSize(1500,800); // Set the Frame Size
         getContentPane().setBackground(new Color(216,180,248));
@@ -56,14 +59,17 @@ public class Register extends JFrame {
         add(name);
 
         String[] departments = {"AE", "CE", "CSE", "ISE", "ECE", "EEE", "ME"};
-        RoundedComboBox deptComboBox = new RoundedComboBox(departments, 15);
-        deptComboBox.setBounds(70, 286, 450, 50);
-        add(deptComboBox);
-        
-//        RoundedTextField dept = new RoundedTextField(20, 15, 10,"Department");
-//        dept.setBounds(70, 286, 450, 50);
-//        dept.setBackground(Color.WHITE);
-//        add(dept);
+        JComboBox<String> combo = new JComboBox<>(departments);
+        combo.setFont(new Font("Raleway", Font.BOLD, 16));
+        combo.setForeground(Color.GRAY);
+        combo.setBackground(Color.WHITE);
+        combo.setBounds(10, 10, 448, 50);
+
+        JPanel comboPanel = new JPanel();
+        comboPanel.setLayout(new BorderLayout());
+        comboPanel.setBorder(new EmptyBorder(10, 10, 10, 10)); // 10 pixels padding on all sides
+        comboPanel.add(combo, BorderLayout.CENTER);
+        comboPanel.setToolTipText("Department"); // Set the tooltip for the JPanel
 
         RoundedTextField year = new RoundedTextField(20, 15, 10,"Year");
         year.setBounds(70, 355, 450, 50);
@@ -74,10 +80,11 @@ public class Register extends JFrame {
         sec.setBounds(70, 426, 450, 50);
         add(sec);
 
-        RoundedTextField dob = new RoundedTextField(20, 15, 10,"Date of Birth");
-        dob.setBounds(70, 495, 450, 50);
-        dob.setBackground(Color.WHITE);
-        add(dob);
+        date = new JDateChooser(); //Jcalender.jar file was not available. Downloaded and added. File-> Project Structure -> Library -> Add -> Apply
+        date.setBounds(70,495,450,50);
+        date.setForeground(Color.BLACK);
+        date.setFont(new Font("Roboto",Font.PLAIN,18));
+        add(date);
 
         RoundedTextField contact = new RoundedTextField(20, 15, 10,"Contact No.");
         contact.setBounds(70, 566, 450, 50);
