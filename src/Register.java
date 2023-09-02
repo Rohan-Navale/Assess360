@@ -59,22 +59,20 @@ public class Register extends JFrame {
         add(name);
 
         String[] departments = {"AE", "CE", "CSE", "ISE", "ECE", "EEE", "ME"};
-        JComboBox<String> combo = new JComboBox<>(departments);
-        combo.setFont(new Font("Raleway", Font.BOLD, 16));
-        combo.setForeground(Color.GRAY);
-        combo.setBackground(Color.WHITE);
-        combo.setBounds(10, 10, 448, 50);
+        JComboBox<String> dept = new JComboBox<>(departments);
+        dept.setFont(new Font("Raleway", Font.BOLD, 16));
+        dept.setForeground(Color.BLACK);
+        dept.setBackground(Color.WHITE);
+        dept.setBounds(70, 566, 450, 50);
+        add(dept);
 
-        JPanel comboPanel = new JPanel();
-        comboPanel.setLayout(new BorderLayout());
-        comboPanel.setBorder(new EmptyBorder(10, 10, 10, 10)); // 10 pixels padding on all sides
-        comboPanel.add(combo, BorderLayout.CENTER);
-        comboPanel.setToolTipText("Department"); // Set the tooltip for the JPanel
-
-        RoundedTextField year = new RoundedTextField(20, 15, 10,"Year");
-        year.setBounds(70, 355, 450, 50);
-        year.setBackground(Color.WHITE);
-        add(year);
+        String[] years = {"1","2","3","4"};
+        JComboBox<String> yr = new JComboBox<>(years);
+        yr.setFont(new Font("Raleway", Font.BOLD, 16));
+        yr.setForeground(Color.BLACK);
+        yr.setBackground(Color.WHITE);
+        yr.setBounds(70, 635, 450, 50);
+        add(yr);
 
         RoundedTextField sec = new RoundedTextField(20, 15, 10,"Section");
         sec.setBounds(70, 426, 450, 50);
@@ -87,12 +85,12 @@ public class Register extends JFrame {
         add(date);
 
         RoundedTextField contact = new RoundedTextField(20, 15, 10,"Contact No.");
-        contact.setBounds(70, 566, 450, 50);
+        contact.setBounds(70, 286, 448, 50);
         contact.setBackground(Color.WHITE);
         add(contact);
 
         RoundedTextField mail = new RoundedTextField(20, 15, 10,"Email Address");
-        mail.setBounds(70, 635, 450, 50);
+        mail.setBounds(70, 355, 448, 50);
         mail.setBackground(Color.WHITE);
         add(mail);
 
