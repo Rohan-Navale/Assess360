@@ -1,7 +1,13 @@
 import javax.swing.*;
+import javax.swing.border.AbstractBorder;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import com.toedter.calendar.JDateChooser;
 
 
@@ -58,6 +64,20 @@ public class Register extends JFrame {
         name.setBackground(Color.WHITE);
         add(name);
 
+        RoundedTextField contact = new RoundedTextField(20, 15, 10,"Contact No.");
+        contact.setBounds(70, 286, 448, 50);
+        contact.setBackground(Color.WHITE);
+        add(contact);
+
+        RoundedTextField mail = new RoundedTextField(20, 15, 10,"Email Address");
+        mail.setBounds(70, 355, 448, 50);
+        mail.setBackground(Color.WHITE);
+        add(mail);
+
+        RoundedTextField sec = new RoundedTextField(20, 15, 10,"Section");
+        sec.setBounds(70, 426, 450, 50);
+        add(sec);
+
         String[] departments = {"AE", "CE", "CSE", "ISE", "ECE", "EEE", "ME"};
         JComboBox<String> dept = new JComboBox<>(departments);
         dept.setFont(new Font("Raleway", Font.BOLD, 16));
@@ -74,25 +94,12 @@ public class Register extends JFrame {
         yr.setBounds(70, 635, 450, 50);
         add(yr);
 
-        RoundedTextField sec = new RoundedTextField(20, 15, 10,"Section");
-        sec.setBounds(70, 426, 450, 50);
-        add(sec);
-
         date = new JDateChooser(); //Jcalender.jar file was not available. Downloaded and added. File-> Project Structure -> Library -> Add -> Apply
         date.setBounds(70,495,450,50);
         date.setForeground(Color.BLACK);
+        date.setToolTipText("Date of Birth");
         date.setFont(new Font("Roboto",Font.PLAIN,18));
         add(date);
-
-        RoundedTextField contact = new RoundedTextField(20, 15, 10,"Contact No.");
-        contact.setBounds(70, 286, 448, 50);
-        contact.setBackground(Color.WHITE);
-        add(contact);
-
-        RoundedTextField mail = new RoundedTextField(20, 15, 10,"Email Address");
-        mail.setBounds(70, 355, 448, 50);
-        mail.setBackground(Color.WHITE);
-        add(mail);
 
         submit = new RoundedButton("Submit",new Color(186,104,200),Color.WHITE);
         submit.setBounds(550, 705, 163, 44);
