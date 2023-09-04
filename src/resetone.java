@@ -1,7 +1,10 @@
+import com.toedter.calendar.JDateChooser;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class resetone extends JFrame {
+    JDateChooser date;
     resetone(){
         setSize(1500,800); // Set the Frame Size
         getContentPane().setBackground(Color.WHITE);
@@ -24,6 +27,40 @@ public class resetone extends JFrame {
         JLabel label = new JLabel(scaledIcon);
         label.setBounds(62, 150, 609, 624); // Set the position and size of the JLabel
         add(label);
+
+        JLabel text  = new JLabel("Enter the below details to reset your password");
+        text.setFont(new Font("Raleway",Font.BOLD, 30));
+        text.setBounds(721,164,700,40);
+        text.setForeground(Color.BLACK);
+        add(text);
+
+        JLabel text1  = new JLabel("USN:");
+        text1.setFont(new Font("Raleway",Font.BOLD, 24));
+        text1.setBounds(792,244,60,30);
+        text1.setForeground(Color.BLACK);
+        add(text1);
+
+        JLabel text2  = new JLabel("DoB:");
+        text2.setFont(new Font("Raleway",Font.BOLD, 24));
+        text2.setBounds(792,323,60,30);
+        text2.setForeground(Color.BLACK);
+        add(text2);
+
+        JTextField usn = new JTextField();
+        usn.setBounds(866,232,450,55);
+        usn.setFont(new Font("Raleway",Font.PLAIN,24));
+        add(usn);
+
+        date = new JDateChooser(); //Jcalender.jar file was not available. Downloaded and added. File-> Project Structure -> Library -> Add -> Apply
+        date.setBounds(865,308,450,55);
+        date.setForeground(Color.BLACK);
+        date.setToolTipText("Date of Birth");
+        date.setFont(new Font("Roboto",Font.PLAIN,18));
+        add(date);
+
+
+
+
     }
 
     public static void main(String[] args){
