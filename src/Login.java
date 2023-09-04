@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class Login extends JFrame {
     JTextField usn, password;
-    JButton Login, Register;
+    JButton Login, Register, forgot;
     Login(){
         setSize(1500,800); // Set the Frame Size
         getContentPane().setBackground(new Color(255,255,255));
@@ -63,9 +63,11 @@ public class Login extends JFrame {
         Login.setFont(new Font("Raleway", Font.BOLD,20));
         add(Login);
 
-        JLabel forgot = new JLabel("<html><u>Forgot Password?</u></html>");
-        forgot.setBounds(176,450,130,25);
-        forgot.setFont(new Font("Raleway",Font.BOLD,14));
+        forgot = new JButton("<html><u>Forgot Password?</u></html>");
+        forgot.setContentAreaFilled(false);
+        forgot.setBorderPainted(false);
+        forgot.setBounds(176, 450, 130, 25);
+        forgot.setFont(new Font("Raleway", Font.BOLD,14));
         add(forgot);
 
         JLabel newUser = new JLabel("New User?");
