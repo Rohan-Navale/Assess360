@@ -13,13 +13,7 @@ public class Register extends JFrame {
         setLocation(0,0);
         setLayout(null);
 
-        ImageIcon LogoIcon = new ImageIcon(ClassLoader.getSystemResource("Icons/logo.png")); // Load the image
-        Image LogoImage = LogoIcon.getImage();
-        Image LogoscaledImage = LogoImage.getScaledInstance(160, 60, Image.SCALE_SMOOTH);
-        ImageIcon LogoscaledIcon = new ImageIcon(LogoscaledImage);
-        JLabel Logolabel = new JLabel(LogoscaledIcon);
-        Logolabel.setBounds(550, 5, 160, 60); // Set the position and size of the JLabel
-        add(Logolabel);
+
 
         ImageIcon originalIcon = new ImageIcon(ClassLoader.getSystemResource("Icons/RegisterUiICon.png")); // Load the image
         Image originalImage = originalIcon.getImage();
