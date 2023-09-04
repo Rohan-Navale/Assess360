@@ -5,6 +5,7 @@ import java.awt.*;
 
 public class resetone extends JFrame {
     JDateChooser date;
+    JButton  enter, back;
     resetone(){
         setSize(1500,800); // Set the Frame Size
         getContentPane().setBackground(Color.WHITE);
@@ -25,7 +26,7 @@ public class resetone extends JFrame {
         Image scaledImage = originalImage.getScaledInstance(609, 624, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(scaledImage);
         JLabel label = new JLabel(scaledIcon);
-        label.setBounds(62, 150, 609, 624); // Set the position and size of the JLabel
+        label.setBounds(62, 130, 609, 624); // Set the position and size of the JLabel
         add(label);
 
         JLabel text  = new JLabel("Enter the below details to reset your password");
@@ -58,8 +59,15 @@ public class resetone extends JFrame {
         date.setFont(new Font("Roboto",Font.PLAIN,18));
         add(date);
 
+        enter = new RoundedButton("Enter",new Color(202,237,255),Color.BLACK);
+        enter.setBounds(1153, 392, 163, 44);
+        enter.setFont(new Font("Raleway", Font.BOLD,20));
+        add(enter);
 
-
+        back = new RoundedButton("Back",new Color(216,180,248),Color.BLACK);
+        back.setBounds(970, 392, 163, 44);
+        back.setFont(new Font("Raleway", Font.BOLD,20));
+        add(back);
 
     }
 
