@@ -4,7 +4,7 @@ import com.toedter.calendar.JDateChooser;
 
 
 public class Register extends JFrame {
-    JButton submit;
+    JButton submit, back;
     JDateChooser date;
     Register(){
         setSize(1500,800); // Set the Frame Size
@@ -30,7 +30,7 @@ public class Register extends JFrame {
         add(text);
 
         RoundedTextField usn = new RoundedTextField(20, 15, 10,"USN");
-        usn.setBounds(70, 70, 450, 50);
+        usn.setBounds(121, 70, 450, 50);
         usn.setBackground(Color.WHITE);
         add(usn);
 
@@ -97,6 +97,12 @@ public class Register extends JFrame {
         submit.setBounds(550, 705, 163, 44);
         submit.setFont(new Font("Raleway", Font.BOLD,20));
         add(submit);
+
+        back = new RoundedButton("Back",new Color(216,180,248),Color.BLACK);
+        back.setBounds(60, 705, 163, 44);
+        back.setFont(new Font("Raleway", Font.BOLD,20));
+        add(back);
+
 
         JPanel panel = new JPanel();
         panel.setBounds(0,0,750,800);
