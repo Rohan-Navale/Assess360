@@ -1,7 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Login extends JFrame {
+public class Login extends JFrame implements ActionListener {
     JTextField usn, password;
     JButton Login, Register, forgot;
     Login(){
@@ -68,6 +70,7 @@ public class Login extends JFrame {
         forgot.setBorderPainted(false);
         forgot.setBounds(176, 450, 130, 25);
         forgot.setFont(new Font("Raleway", Font.BOLD,14));
+        forgot.addActionListener(this);
         add(forgot);
 
         JLabel newUser = new JLabel("New User?");
@@ -80,6 +83,7 @@ public class Login extends JFrame {
         Register.setBorderPainted(false);
         Register.setBounds(313, 538, 162, 44);
         Register.setFont(new Font("Raleway", Font.BOLD,18));
+        Register.addActionListener(this);
         add(Register);
 
         JPanel panel = new JPanel();
@@ -87,8 +91,20 @@ public class Login extends JFrame {
         panel.setBackground(new Color(216, 180, 248));
         add(panel);
 
+
+
     }
     public static void main(String[] args) {
         new Login();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        if(ae.getSource()==forgot){
+            new resetone();
+        }
+        if(ae.getSource()==Register){
+            new Register();
+        }
     }
 }
