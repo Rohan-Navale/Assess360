@@ -35,33 +35,33 @@ public class Register extends JFrame {
         add(usn);
 
         RoundedTextField password = new RoundedTextField(20, 15, 10,"Set Password");
-        password.setBounds(70, 140, 450, 50);
+        password.setBounds(121, 140, 450, 50);
         password.setBackground(Color.WHITE);
         add(password);
 
         JLabel passtext = new JLabel("Remember your password for future use");
-        passtext.setBounds(80,187,500,20);
+        passtext.setBounds(131,187,500,20);
         passtext.setFont(new Font("Raleway",Font.PLAIN,10));
         passtext.setForeground(Color.red);
         add(passtext);
 
         RoundedTextField name = new RoundedTextField(20, 15, 10,"Name");
-        name.setBounds(70, 215, 450, 50);
+        name.setBounds(121, 215, 450, 50);
         name.setBackground(Color.WHITE);
         add(name);
 
         RoundedTextField contact = new RoundedTextField(20, 15, 10,"Contact No.");
-        contact.setBounds(70, 286, 448, 50);
+        contact.setBounds(121, 286, 448, 50);
         contact.setBackground(Color.WHITE);
         add(contact);
 
         RoundedTextField mail = new RoundedTextField(20, 15, 10,"Email Address");
-        mail.setBounds(70, 355, 448, 50);
+        mail.setBounds(121, 355, 448, 50);
         mail.setBackground(Color.WHITE);
         add(mail);
 
         RoundedTextField sec = new RoundedTextField(20, 15, 10,"Section");
-        sec.setBounds(70, 426, 450, 50);
+        sec.setBounds(121, 426, 450, 50);
         add(sec);
 
         String[] departments = {"AE", "CE", "CSE", "ISE", "ECE", "EEE", "ME"};
@@ -69,7 +69,7 @@ public class Register extends JFrame {
         dept.setFont(new Font("Raleway", Font.BOLD, 16));
         dept.setForeground(Color.BLACK);
         dept.setBackground(Color.WHITE);
-        dept.setBounds(70, 566, 450, 50);
+        dept.setBounds(121, 566, 450, 50);
         add(dept);
 
         String[] years = {"1","2","3","4"};
@@ -77,18 +77,18 @@ public class Register extends JFrame {
         yr.setFont(new Font("Raleway", Font.BOLD, 16));
         yr.setForeground(Color.BLACK);
         yr.setBackground(Color.WHITE);
-        yr.setBounds(70, 635, 450, 50);
+        yr.setBounds(121, 635, 450, 50);
         add(yr);
 
         date = new JDateChooser(); //Jcalender.jar file was not available. Downloaded and added. File-> Project Structure -> Library -> Add -> Apply
-        date.setBounds(70,495,450,50);
+        date.setBounds(121,495,450,50);
         date.setForeground(Color.BLACK);
         date.setToolTipText("Date of Birth");
         date.setFont(new Font("Roboto",Font.PLAIN,18));
         add(date);
 
         JLabel datetext = new JLabel("Enter your Date of Birth");
-        datetext.setBounds(80,540,500,20);
+        datetext.setBounds(131,540,500,20);
         datetext.setFont(new Font("Raleway",Font.PLAIN,10));
         datetext.setForeground(Color.blue);
         add(datetext);
