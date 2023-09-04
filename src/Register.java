@@ -1,13 +1,5 @@
 import javax.swing.*;
-import javax.swing.border.AbstractBorder;
-import javax.swing.border.Border;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-
 import com.toedter.calendar.JDateChooser;
 
 
@@ -56,7 +48,7 @@ public class Register extends JFrame {
         JLabel passtext = new JLabel("Remember your password for future use");
         passtext.setBounds(80,187,500,20);
         passtext.setFont(new Font("Raleway",Font.PLAIN,10));
-        passtext.setForeground(Color.blue);
+        passtext.setForeground(Color.red);
         add(passtext);
 
         RoundedTextField name = new RoundedTextField(20, 15, 10,"Name");
@@ -100,6 +92,12 @@ public class Register extends JFrame {
         date.setToolTipText("Date of Birth");
         date.setFont(new Font("Roboto",Font.PLAIN,18));
         add(date);
+
+        JLabel datetext = new JLabel("Enter your Date of Birth");
+        datetext.setBounds(80,540,500,20);
+        datetext.setFont(new Font("Raleway",Font.PLAIN,10));
+        datetext.setForeground(Color.blue);
+        add(datetext);
 
         submit = new RoundedButton("Submit",new Color(186,104,200),Color.WHITE);
         submit.setBounds(550, 705, 163, 44);
