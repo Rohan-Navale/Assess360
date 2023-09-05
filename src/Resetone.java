@@ -2,8 +2,10 @@ import com.toedter.calendar.JDateChooser;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Resetone extends JFrame {
+public class Resetone extends JFrame implements ActionListener {
     JDateChooser date;
     JButton  enter, back;
     Resetone(){
@@ -61,17 +63,31 @@ public class Resetone extends JFrame {
 
         enter = new RoundedButton("Enter",new Color(202,237,255),Color.BLACK);
         enter.setBounds(1153, 392, 163, 44);
+        enter.addActionListener(this);
         enter.setFont(new Font("Raleway", Font.BOLD,20));
         add(enter);
 
         back = new RoundedButton("Back",new Color(216,180,248),Color.BLACK);
         back.setBounds(970, 392, 163, 44);
         back.setFont(new Font("Raleway", Font.BOLD,20));
+        back.addActionListener(this);
         add(back);
 
     }
 
     public static void main(String[] args){
         new Resetone();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        if(ae.getSource()==back){
+            setVisible(false);
+            new Login();
+        }
+        if(ae.getSource()==enter){
+            setVisible(false);
+            new ResetTwo();
+        }
     }
 }

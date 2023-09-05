@@ -2,8 +2,10 @@ import com.toedter.calendar.JDateChooser;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class ResetTwo  extends JFrame{
+public class ResetTwo  extends JFrame implements ActionListener {
     JButton back, enter;
     ResetTwo(){
         setSize(1500,800);
@@ -52,9 +54,18 @@ public class ResetTwo  extends JFrame{
         back = new RoundedButton("Back",new Color(216,180,248),Color.BLACK);
         back.setBounds(926, 392, 163, 44);
         back.setFont(new Font("Raleway", Font.BOLD,20));
+        back.addActionListener(this);
         add(back);
 
     }
 
     public static void main(String[] args){ new ResetTwo();}
+
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        if(ae.getSource()==back){
+            setVisible(false);
+            new Resetone();
+        }
+    }
 }

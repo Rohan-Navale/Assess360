@@ -1,9 +1,12 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import com.toedter.calendar.JDateChooser;
 
 
-public class Register extends JFrame {
+public class Register extends JFrame implements ActionListener {
     JButton submit, back;
     JDateChooser date;
     Register(){
@@ -107,6 +110,7 @@ public class Register extends JFrame {
         back = new RoundedButton("Back",new Color(216,180,248),Color.BLACK);
         back.setBounds(60, 705, 163, 44);
         back.setFont(new Font("Raleway", Font.BOLD,20));
+        back.addActionListener(this);
         add(back);
 
 
@@ -119,5 +123,13 @@ public class Register extends JFrame {
 
     public static void main(String[] args){
         new Register();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        if(ae.getSource()==back){
+            setVisible(false);
+            new Login();
+        }
     }
 }
