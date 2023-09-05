@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class ResetTwo  extends JFrame{
+    JButton back, enter;
     ResetTwo(){
         setSize(1500,800); // Set the Frame Size
         getContentPane().setBackground(Color.WHITE);
@@ -42,6 +43,16 @@ public class ResetTwo  extends JFrame{
         repass.setBounds(822, 308, 450, 55);
         repass.setBackground(Color.WHITE);
         add(repass);
+
+        enter = new RoundedButton("Enter",new Color(202,237,255),Color.BLACK);
+        enter.setBounds(1109, 392, 163, 44);
+        enter.setFont(new Font("Raleway", Font.BOLD,20));
+        add(enter);
+
+        back = new RoundedButton("Back",new Color(216,180,248),Color.BLACK);
+        back.setBounds(926, 392, 163, 44);
+        back.setFont(new Font("Raleway", Font.BOLD,20));
+        add(back);
 
     }
 
