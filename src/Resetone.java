@@ -3,10 +3,10 @@ import com.toedter.calendar.JDateChooser;
 import javax.swing.*;
 import java.awt.*;
 
-public class resetone extends JFrame {
+public class Resetone extends JFrame {
     JDateChooser date;
     JButton  enter, back;
-    resetone(){
+    Resetone(){
         setSize(1500,800); // Set the Frame Size
         getContentPane().setBackground(Color.WHITE);
         setVisible(true);
@@ -72,6 +72,6 @@ public class resetone extends JFrame {
     }
 
     public static void main(String[] args){
-        new resetone();
+        new Resetone();
     }
 }
