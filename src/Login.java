@@ -101,7 +101,7 @@ public class Login extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent ae) {
         if(ae.getSource()==forgot){
-            new resetone();
+            new Resetone();
         }
         if(ae.getSource()==Register){
             new Register();
