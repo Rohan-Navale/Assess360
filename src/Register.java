@@ -149,8 +149,9 @@ public class Register extends JFrame implements ActionListener {
                 c.s.executeUpdate(q);
                 JOptionPane.showMessageDialog(null,"Registration Successful");
                 setVisible(false);
+
             } catch (SQLIntegrityConstraintViolationException e) {
-                if (e.getErrorCode() == 1062) { // MySQL error code for duplicate entry
+                if (e.getErrorCode() == 1062) {
                     JOptionPane.showMessageDialog(null, "USN already registered");
                 }
                 System.out.println(e);
