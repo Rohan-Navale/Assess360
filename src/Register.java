@@ -9,6 +9,8 @@ import com.toedter.calendar.JDateChooser;
 public class Register extends JFrame implements ActionListener {
     JButton submit, back;
     JDateChooser date;
+    JComboBox<String> dept,yr;
+    RoundedTextField usn, password, name, contact, mail, sec;
     Register(){
         setSize(1500,800); // Set the Frame Size
         getContentPane().setBackground(new Color(216,180,248));
@@ -38,12 +40,12 @@ public class Register extends JFrame implements ActionListener {
         text.setForeground(Color.BLACK);
         add(text);
 
-        RoundedTextField usn = new RoundedTextField(20, 15, 10,"USN");
+        usn = new RoundedTextField(20, 15, 10,"USN");
         usn.setBounds(121, 70, 450, 50);
         usn.setBackground(Color.WHITE);
         add(usn);
 
-        RoundedTextField password = new RoundedTextField(20, 15, 10,"Set Password");
+        password = new RoundedTextField(20, 15, 10,"Set Password");
         password.setBounds(121, 140, 450, 50);
         password.setBackground(Color.WHITE);
         add(password);
@@ -54,27 +56,27 @@ public class Register extends JFrame implements ActionListener {
         passtext.setForeground(Color.red);
         add(passtext);
 
-        RoundedTextField name = new RoundedTextField(20, 15, 10,"Name");
+        name = new RoundedTextField(20, 15, 10,"Name");
         name.setBounds(121, 215, 450, 50);
         name.setBackground(Color.WHITE);
         add(name);
 
-        RoundedTextField contact = new RoundedTextField(20, 15, 10,"Contact No.");
+        contact = new RoundedTextField(20, 15, 10,"Contact No.");
         contact.setBounds(121, 286, 448, 50);
         contact.setBackground(Color.WHITE);
         add(contact);
 
-        RoundedTextField mail = new RoundedTextField(20, 15, 10,"Email Address");
+        mail = new RoundedTextField(20, 15, 10,"Email Address");
         mail.setBounds(121, 355, 448, 50);
         mail.setBackground(Color.WHITE);
         add(mail);
 
-        RoundedTextField sec = new RoundedTextField(20, 15, 10,"Section");
+        sec = new RoundedTextField(20, 15, 10,"Section");
         sec.setBounds(121, 426, 450, 50);
         add(sec);
 
         String[] departments = {"AE", "CE", "CSE", "ISE", "ECE", "EEE", "ME"};
-        JComboBox<String> dept = new JComboBox<>(departments);
+        dept = new JComboBox<>(departments);
         dept.setFont(new Font("Raleway", Font.BOLD, 16));
         dept.setForeground(Color.BLACK);
         dept.setBackground(Color.WHITE);
@@ -82,7 +84,7 @@ public class Register extends JFrame implements ActionListener {
         add(dept);
 
         String[] years = {"1","2","3","4"};
-        JComboBox<String> yr = new JComboBox<>(years);
+        yr = new JComboBox<>(years);
         yr.setFont(new Font("Raleway", Font.BOLD, 16));
         yr.setForeground(Color.BLACK);
         yr.setBackground(Color.WHITE);
@@ -112,7 +114,6 @@ public class Register extends JFrame implements ActionListener {
         back.setFont(new Font("Raleway", Font.BOLD,20));
         back.addActionListener(this);
         add(back);
-
 
         JPanel panel = new JPanel();
         panel.setBounds(0,0,750,800);
