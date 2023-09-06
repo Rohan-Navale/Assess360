@@ -1,12 +1,13 @@
 import com.toedter.calendar.JDateChooser;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.PreparedStatement;
 
 public class Resetone extends JFrame implements ActionListener {
     JDateChooser date;
+    JTextField usn;
     JButton  enter, back;
     Resetone(){
         setSize(1500,800); // Set the Frame Size
@@ -49,7 +50,7 @@ public class Resetone extends JFrame implements ActionListener {
         text2.setForeground(Color.BLACK);
         add(text2);
 
-        JTextField usn = new JTextField();
+        usn = new JTextField();
         usn.setBounds(866,232,450,55);
         usn.setFont(new Font("Raleway",Font.PLAIN,24));
         add(usn);
@@ -64,6 +65,7 @@ public class Resetone extends JFrame implements ActionListener {
         enter = new RoundedButton("Enter",new Color(202,237,255),Color.BLACK);
         enter.setBounds(1153, 392, 163, 44);
         enter.addActionListener(this);
+        enter.addActionListener(this);
         enter.setFont(new Font("Raleway", Font.BOLD,20));
         add(enter);
 
@@ -72,7 +74,6 @@ public class Resetone extends JFrame implements ActionListener {
         back.setFont(new Font("Raleway", Font.BOLD,20));
         back.addActionListener(this);
         add(back);
-
     }
 
     public static void main(String[] args){
@@ -86,8 +87,20 @@ public class Resetone extends JFrame implements ActionListener {
             new Login();
         }
         if(ae.getSource()==enter){
+            String susn = usn.getText();
+            String sdate = ((JTextField) date.getDateEditor().getUiComponent()).getText();
+            try{
+                DbConnectivity c = new DbConnectivity();
+                String sql = "SELECT * FROM register WHERE USN LIKE ?";
+                PreparedStatement preparedStatement = c.prepareStatement(sql);
+                preparedStatement.setString(1, "%" + usn + "%");
+                c.s.executeUpdate(sql);
+
+            } catch (Exception e){
+                System.out.println(e);
+            }
             setVisible(false);
-            new ResetTwo();
+            new ResetTwo(susn);
         }
     }
 }
