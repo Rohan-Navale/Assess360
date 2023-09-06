@@ -139,8 +139,8 @@ public class Register extends JFrame implements ActionListener {
             String smail = mail.getText();
             String spassword = password.getText();
             String ssec = sec.getText();
-            String sdept = String.valueOf(dept.getNextFocusableComponent());
-            String syear = String.valueOf(yr.getNextFocusableComponent());
+            String sdept = String.valueOf(dept.getSelectedItem());
+            String syear = String.valueOf(yr.getSelectedItem());
             String sdate = ((JTextField) date.getDateEditor().getUiComponent()).getText();
 
             try {
