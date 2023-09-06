@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 public class ResetTwo  extends JFrame implements ActionListener {
     JButton back, enter;
-    ResetTwo(){
+    ResetTwo(String usn){
         setSize(1500,800);
         getContentPane().setBackground(Color.WHITE);
         setVisible(true);
@@ -59,7 +59,7 @@ public class ResetTwo  extends JFrame implements ActionListener {
 
     }
 
-    public static void main(String[] args){ new ResetTwo();}
+    public static void main(String[] args){ new ResetTwo("");}
 
     @Override
     public void actionPerformed(ActionEvent ae) {
