@@ -107,6 +107,7 @@ public class Register extends JFrame implements ActionListener {
         submit = new RoundedButton("Submit",new Color(186,104,200),Color.WHITE);
         submit.setBounds(550, 705, 163, 44);
         submit.setFont(new Font("Raleway", Font.BOLD,20));
+        submit.addActionListener(this);
         add(submit);
 
         back = new RoundedButton("Back",new Color(216,180,248),Color.BLACK);
@@ -128,6 +129,26 @@ public class Register extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
+        if(ae.getSource()==submit) {
+            String susn = usn.getText();
+            String sname = name.getText();
+            String scontact = contact.getText();
+            String smail = mail.getText();
+            String spassword = password.getText();
+            String ssec = sec.getText();
+            String sdept = String.valueOf(dept.getNextFocusableComponent());
+            String syear = String.valueOf(yr.getNextFocusableComponent());
+            String sdate = ((JTextField) date.getDateEditor().getUiComponent()).getText();
+
+            try {
+                DbConnectivity c = new DbConnectivity();
+                String q = "insert into register values('" + susn + "','" + spassword + "','" + sname + "','" + sdept + "','" + syear + "','" + ssec + "','" + sdate + "','" + scontact + "','" + smail + "')";
+                c.s.executeUpdate(q);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
+
         if(ae.getSource()==back){
             setVisible(false);
             new Login();
