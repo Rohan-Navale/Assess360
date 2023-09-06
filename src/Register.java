@@ -2,6 +2,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
+import java.util.Objects;
 
 import com.toedter.calendar.JDateChooser;
 
@@ -144,8 +147,15 @@ public class Register extends JFrame implements ActionListener {
                 DbConnectivity c = new DbConnectivity();
                 String q = "insert into register values('" + susn + "','" + spassword + "','" + sname + "','" + sdept + "','" + syear + "','" + ssec + "','" + sdate + "','" + scontact + "','" + smail + "')";
                 c.s.executeUpdate(q);
-            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null,"Registration Successful");
+                setVisible(false);
+            } catch (SQLIntegrityConstraintViolationException e) {
+                if (e.getErrorCode() == 1062) { // MySQL error code for duplicate entry
+                    JOptionPane.showMessageDialog(null, "USN already registered");
+                }
                 System.out.println(e);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
             }
         }
 
