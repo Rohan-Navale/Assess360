@@ -92,8 +92,8 @@ public class Resetone extends JFrame implements ActionListener {
             try{
                 DbConnectivity c = new DbConnectivity();
                 String sql = "SELECT * FROM register WHERE USN LIKE ?";
-                PreparedStatement preparedStatement = c.prepareStatement(sql);
-                preparedStatement.setString(1, "%" + usn + "%");
+                //PreparedStatement preparedStatement = c.prepareStatement(sql);
+               // preparedStatement.setString(1, "%" + usn + "%");
                 c.s.executeUpdate(sql);
 
             } catch (Exception e){
