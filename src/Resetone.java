@@ -97,13 +97,11 @@ public class Resetone extends JFrame implements ActionListener {
             setVisible(false);
             new Login();
         }
-
         if (ae.getSource() == enter) {
             String susn = usn.getText();
             String sdate = ((JTextField) date.getDateEditor().getUiComponent()).getText();
             String snew = newpass.getText();
             String rnew = repass.getText();
-
             try {
                 DbConnectivity conn = new DbConnectivity();
                 if (conn.usnExists(susn)) {
@@ -116,6 +114,8 @@ public class Resetone extends JFrame implements ActionListener {
                             int rowsUpdated = updateStatement.executeUpdate();
                             if (rowsUpdated > 0) {
                                 JOptionPane.showMessageDialog(null, "Password updated successfully");
+                                setVisible(false);
+                                new Login();
                             } else {
                                 JOptionPane.showMessageDialog(null, "Password update failed");
                             }
