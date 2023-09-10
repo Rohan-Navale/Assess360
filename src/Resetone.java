@@ -8,6 +8,8 @@ import java.sql.PreparedStatement;
 public class Resetone extends JFrame implements ActionListener {
     JDateChooser date;
     JTextField usn;
+
+    RoundedTextField newpass, repass;
     JButton  enter, back;
     Resetone(){
         setSize(1500,800); // Set the Frame Size
@@ -62,15 +64,24 @@ public class Resetone extends JFrame implements ActionListener {
         date.setFont(new Font("Roboto",Font.PLAIN,18));
         add(date);
 
+        newpass = new RoundedTextField(20, 15, 10,"New Password");
+        newpass.setBounds(865, 384, 450, 55);
+        newpass.setBackground(Color.WHITE);
+        add(newpass);
+
+        repass = new RoundedTextField(20, 15, 10,"Re-enter New Password");
+        repass.setBounds(865, 460, 450, 55);
+        repass.setBackground(Color.WHITE);
+        add(repass);
+
         enter = new RoundedButton("Enter",new Color(202,237,255),Color.BLACK);
-        enter.setBounds(1153, 392, 163, 44);
-        enter.addActionListener(this);
+        enter.setBounds(1153, 540, 163, 44);
         enter.addActionListener(this);
         enter.setFont(new Font("Raleway", Font.BOLD,20));
         add(enter);
 
         back = new RoundedButton("Back",new Color(216,180,248),Color.BLACK);
-        back.setBounds(970, 392, 163, 44);
+        back.setBounds(970, 540, 163, 44);
         back.setFont(new Font("Raleway", Font.BOLD,20));
         back.addActionListener(this);
         add(back);
@@ -86,21 +97,41 @@ public class Resetone extends JFrame implements ActionListener {
             setVisible(false);
             new Login();
         }
-        if(ae.getSource()==enter){
+
+        if (ae.getSource() == enter) {
             String susn = usn.getText();
             String sdate = ((JTextField) date.getDateEditor().getUiComponent()).getText();
-            try{
-                DbConnectivity c = new DbConnectivity();
-                String sql = "SELECT * FROM register WHERE USN LIKE ?";
-                //PreparedStatement preparedStatement = c.prepareStatement(sql);
-               // preparedStatement.setString(1, "%" + usn + "%");
-                c.s.executeUpdate(sql);
+            String snew = newpass.getText();
+            String rnew = repass.getText();
 
-            } catch (Exception e){
-                System.out.println(e);
+            try {
+                DbConnectivity conn = new DbConnectivity();
+                if (conn.usnExists(susn)) {
+                    if (conn.dateOfBirthMatches(susn, sdate)) {
+                        if (snew.equals(rnew)) {
+                            String updateSql = "UPDATE register SET Password=? WHERE USN=?";
+                            PreparedStatement updateStatement = conn.prepareStatement(updateSql);
+                            updateStatement.setString(1, snew);
+                            updateStatement.setString(2, susn);
+                            int rowsUpdated = updateStatement.executeUpdate();
+                            if (rowsUpdated > 0) {
+                                JOptionPane.showMessageDialog(null, "Password updated successfully");
+                            } else {
+                                JOptionPane.showMessageDialog(null, "Password update failed");
+                            }
+                        } else {
+                            JOptionPane.showMessageDialog(null, "New pin and reentered pin do not match");
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Date of birth does not match");
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "USN does not exist");
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-            setVisible(false);
-            new ResetTwo(susn);
         }
+
     }
 }
