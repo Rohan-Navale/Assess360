@@ -14,11 +14,9 @@ public class DbConnectivity {
             System.out.println(e);
         }
     }
-
     public PreparedStatement prepareStatement(String sql) throws SQLException {
         return c.prepareStatement(sql);
     }
-
     public boolean usnExists(String usn) {
         try {
             String sql = "SELECT * FROM register WHERE USN=?";
