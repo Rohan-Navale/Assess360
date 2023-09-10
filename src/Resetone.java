@@ -4,11 +4,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.PreparedStatement;
-
 public class Resetone extends JFrame implements ActionListener {
     JDateChooser date;
     JTextField usn;
-
     RoundedTextField newpass, repass;
     JButton  enter, back;
     Resetone(){
@@ -86,11 +84,9 @@ public class Resetone extends JFrame implements ActionListener {
         back.addActionListener(this);
         add(back);
     }
-
     public static void main(String[] args){
         new Resetone();
     }
-
     @Override
     public void actionPerformed(ActionEvent ae) {
         if(ae.getSource()==back){
@@ -132,6 +128,5 @@ public class Resetone extends JFrame implements ActionListener {
                 e.printStackTrace();
             }
         }
-
     }
 }
