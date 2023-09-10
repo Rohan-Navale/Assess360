@@ -90,9 +90,6 @@ public class Login extends JFrame implements ActionListener {
         panel.setBounds(0,0,750,800);
         panel.setBackground(new Color(216, 180, 248));
         add(panel);
-
-
-
     }
     public static void main(String[] args) {
         new Login();
