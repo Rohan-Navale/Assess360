@@ -103,12 +103,18 @@ public class Resetone extends JFrame implements ActionListener {
                 if (conn.usnExists(susn)) {
                     if (conn.dateOfBirthMatches(susn, sdate)) {
                         if (snew.equals(rnew)) {
-                            String updateSql = "UPDATE register SET Password=? WHERE USN=?";
-                            PreparedStatement updateStatement = conn.prepareStatement(updateSql);
-                            updateStatement.setString(1, snew);
-                            updateStatement.setString(2, susn);
-                            int rowsUpdated = updateStatement.executeUpdate();
-                            if (rowsUpdated > 0) {
+                            String updateSql2 = "UPDATE login SET Password=? WHERE USN=?";
+                            PreparedStatement updateStatement2 = conn.prepareStatement(updateSql2);
+                            updateStatement2.setString(1, snew);
+                            updateStatement2.setString(2, susn);
+                            int rowsUpdated1 = updateStatement2.executeUpdate();
+
+                            String updateSql1 = "UPDATE register SET Password=? WHERE USN=?";
+                            PreparedStatement updateStatement1 = conn.prepareStatement(updateSql1);
+                            updateStatement1.setString(1, snew);
+                            updateStatement1.setString(2, susn);
+                            int rowsUpdated2 = updateStatement1.executeUpdate();
+                            if (rowsUpdated1 > 0 && rowsUpdated2 > 0) {
                                 JOptionPane.showMessageDialog(null, "Password updated successfully");
                                 setVisible(false);
                                 new Login();
