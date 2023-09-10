@@ -3,7 +3,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
 public class DbConnectivity {
     Connection  c;
     Statement s;
@@ -32,8 +31,6 @@ public class DbConnectivity {
             return false;
         }
     }
-
-
     public boolean dateOfBirthMatches(String usn, String dateOfBirth) {
         try {
             String sql = "SELECT COUNT(*) FROM register WHERE USN = ? AND DOB = ?";
@@ -49,6 +46,4 @@ public class DbConnectivity {
         }
         return false;
     }
-
-
 }
