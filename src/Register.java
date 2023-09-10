@@ -4,11 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
-import java.util.Objects;
-
 import com.toedter.calendar.JDateChooser;
-
-
 public class Register extends JFrame implements ActionListener {
     JButton submit, back;
     JDateChooser date;
@@ -125,11 +121,9 @@ public class Register extends JFrame implements ActionListener {
         add(panel);
 
     }
-
     public static void main(String[] args){
         new Register();
     }
-
     @Override
     public void actionPerformed(ActionEvent ae) {
         if(ae.getSource()==submit) {
@@ -142,7 +136,6 @@ public class Register extends JFrame implements ActionListener {
             String sdept = String.valueOf(dept.getSelectedItem());
             String syear = String.valueOf(yr.getSelectedItem());
             String sdate = ((JTextField) date.getDateEditor().getUiComponent()).getText();
-
             try {
                 DbConnectivity c = new DbConnectivity();
                 String q = "insert into register values('" + susn + "','" + spassword + "','" + sname + "','" + sdept + "','" + syear + "','" + ssec + "','" + sdate + "','" + scontact + "','" + smail + "')";
@@ -159,7 +152,6 @@ public class Register extends JFrame implements ActionListener {
                 throw new RuntimeException(e);
             }
         }
-
         if(ae.getSource()==back){
             setVisible(false);
             new Login();
