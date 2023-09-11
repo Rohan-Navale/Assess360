@@ -17,6 +17,12 @@ public class alert  extends JFrame{
         JLabel Logolabel = new JLabel(LogoscaledIcon);
         Logolabel.setBounds(20, 25, 180, 74); // Set the position and size of the JLabel
         add(Logolabel);
+
+        RoundedPanel panel = new RoundedPanel();
+        panel.setBounds(241, 105, 1018, 568);
+        panel.setBackground(new Color(202, 237, 255));
+        add(panel);
+
     }
     public static void main(String[] args) {
         new alert();
