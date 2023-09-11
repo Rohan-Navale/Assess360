@@ -3,10 +3,10 @@ import java.awt.*;
 import java.awt.geom.RoundRectangle2D;
 
 class RoundedPanel extends JPanel {
-    private int cornerRadius = 50; // Adjust this value to change the corner radius
+    private int cornerRadius = 50;
 
     public RoundedPanel() {
-        setOpaque(false); // Make the panel transparent
+        setOpaque(false);
     }
 
     @Override
