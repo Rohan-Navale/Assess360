@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class alert  extends JFrame{
-
+RoundedButton proceed;
     alert(){
         setSize(1500, 800); // Set the Frame Size
         getContentPane().setBackground(Color.WHITE);
@@ -72,6 +72,18 @@ public class alert  extends JFrame{
         panel.setBounds(241, 200, 1018, 360);
         panel.setBackground(new Color(202, 237, 255));
         add(panel);
+
+        JCheckBox button = new JCheckBox();
+        button.setText("I have read and understood the instructions");
+        button.setBackground(Color.WHITE);
+        button.setFont(new Font("Raleway",Font.PLAIN,20));
+        button.setBounds(267,570,500,30);
+        add(button);
+
+        proceed = new RoundedButton("Proceed",new Color(216,180,248),Color.BLACK);
+        proceed.setBounds(1096, 580, 163, 44);
+        proceed.setFont(new Font("Raleway", Font.BOLD,20));
+        add(proceed);
 
     }
     public static void main(String[] args) {
