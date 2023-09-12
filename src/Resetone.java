@@ -59,7 +59,7 @@ public class Resetone extends JFrame implements ActionListener {
         date.setBounds(865,308,450,55);
         date.setForeground(Color.BLACK);
         date.setToolTipText("Date of Birth");
-        date.setFont(new Font("Roboto",Font.PLAIN,18));
+        date.setFont(new Font("Roboto",Font.BOLD,18));
         add(date);
 
         newpass = new RoundedTextField(20, 15, 10,"New Password");
@@ -108,13 +108,7 @@ public class Resetone extends JFrame implements ActionListener {
                             updateStatement2.setString(1, snew);
                             updateStatement2.setString(2, susn);
                             int rowsUpdated1 = updateStatement2.executeUpdate();
-
-                            String updateSql1 = "UPDATE register SET Password=? WHERE USN=?";
-                            PreparedStatement updateStatement1 = conn.prepareStatement(updateSql1);
-                            updateStatement1.setString(1, snew);
-                            updateStatement1.setString(2, susn);
-                            int rowsUpdated2 = updateStatement1.executeUpdate();
-                            if (rowsUpdated1 > 0 && rowsUpdated2 > 0) {
+                            if (rowsUpdated1 > 0) {
                                 JOptionPane.showMessageDialog(null, "Password updated successfully");
                                 setVisible(false);
                                 new Login();
