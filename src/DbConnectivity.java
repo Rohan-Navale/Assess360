@@ -44,4 +44,21 @@ public class DbConnectivity {
         }
         return false;
     }
+
+    public boolean usnpasswordmatch(String usn, String password) {
+        try {
+            String sql = "SELECT COUNT(*) FROM login WHERE USN = ? AND password = ?";
+            PreparedStatement preparedStatement = prepareStatement(sql);
+            preparedStatement.setString(1, usn);
+            preparedStatement.setString(2, password);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next() && resultSet.getInt(1) > 0) {
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 }
