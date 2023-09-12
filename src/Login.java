@@ -2,9 +2,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class Login extends JFrame implements ActionListener {
-    JTextField usn, password;
+
+    RoundedTextField usnField, PasswordField;
     JButton Login, Register, forgot;
     Login(){
         setSize(1500,800); // Set the Frame Size
@@ -43,7 +46,7 @@ public class Login extends JFrame implements ActionListener {
         Userlabel.setBounds(135, 318, 23, 23); // Set the position and size of the JLabel
         add(Userlabel);
 
-        RoundedTextField usnField = new RoundedTextField(20, 15, 10,"USN");
+        usnField = new RoundedTextField(20, 15, 10,"USN");
         usnField.setBounds(175, 307, 391, 50);
         usnField.setBackground(Color.WHITE);
         add(usnField);
@@ -56,12 +59,13 @@ public class Login extends JFrame implements ActionListener {
         Locklabel.setBounds(135, 382, 24, 24); // Set the position and size of the JLabel
         add(Locklabel);
 
-        RoundedTextField PasswordField = new RoundedTextField(20, 15, 10,"Password");
+        PasswordField = new RoundedTextField(20, 15, 10,"Password");
         PasswordField.setBounds(175, 371, 391, 50);
         add(PasswordField);
 
         Login = new RoundedButton("Log In",new Color(202,237,255),Color.BLACK);
         Login.setBounds(404, 445, 163, 44);
+        Login.addActionListener(this);
         Login.setFont(new Font("Raleway", Font.BOLD,20));
         add(Login);
 
@@ -103,6 +107,22 @@ public class Login extends JFrame implements ActionListener {
         if(ae.getSource()==Register){
             setVisible(false);
             new Register();
+        }
+
+        if(ae.getSource()== Login){
+            String susn = usnField.getText();
+            String spass = PasswordField.getText();
+
+            if(susn.equals(" ")|| spass.equals(" ")){
+                JOptionPane.showMessageDialog(null,"Please enter the required details");
+            }
+            DbConnectivity conn= new DbConnectivity();
+            if(conn.usnpasswordmatch(susn,spass)){
+                setVisible(false);
+                new alert();
+            } else {
+                JOptionPane.showMessageDialog(null,"USN does not exists");
+            }
         }
     }
 }
