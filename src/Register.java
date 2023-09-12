@@ -138,7 +138,7 @@ public class Register extends JFrame implements ActionListener {
             String sdate = ((JTextField) date.getDateEditor().getUiComponent()).getText();
             try {
                 DbConnectivity c = new DbConnectivity();
-                String q1 = "insert into register values('" + susn + "','" + spassword + "','" + sname + "','" + sdept + "','" + syear + "','" + ssec + "','" + sdate + "','" + scontact + "','" + smail + "')";
+                String q1 = "insert into register values('" + susn + "','" + sname + "','" + sdept + "','" + syear + "','" + ssec + "','" + sdate + "','" + scontact + "','" + smail + "')";
                 String q2 = "insert into login values('" + susn + "','" + spassword + "')";
                 c.s.executeUpdate(q1);
                 c.s.executeUpdate(q2);
