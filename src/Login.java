@@ -108,21 +108,22 @@ public class Login extends JFrame implements ActionListener {
             setVisible(false);
             new Register();
         }
+        String susn =  usnField.getText();
+        String spass = PasswordField.getText();
 
-        if(ae.getSource()== Login){
-            String susn = usnField.getText();
-            String spass = PasswordField.getText();
-
-            if(susn.equals(" ")|| spass.equals(" ")){
-                JOptionPane.showMessageDialog(null,"Please enter the required details");
-            }
-            DbConnectivity conn= new DbConnectivity();
-            if(conn.usnpasswordmatch(susn,spass)){
-                setVisible(false);
-                new alert();
+        if (ae.getSource() == Login) {
+            if (susn.isEmpty() || spass.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Please enter the required details");
             } else {
-                JOptionPane.showMessageDialog(null,"USN does not exists");
+                DbConnectivity conn = new DbConnectivity();
+                if (conn.usnpasswordmatch(susn, spass)) {
+                    setVisible(false);
+                    new alert();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Wrong Credentials Entered");
+                }
             }
         }
+
     }
 }
