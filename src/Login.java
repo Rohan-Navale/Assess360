@@ -2,8 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
 public class Login extends JFrame implements ActionListener {
 
@@ -118,7 +116,7 @@ public class Login extends JFrame implements ActionListener {
                 DbConnectivity conn = new DbConnectivity();
                 if (conn.usnpasswordmatch(susn, spass)) {
                     setVisible(false);
-                    new alert();
+                    new Alert();
                 } else {
                     JOptionPane.showMessageDialog(null, "Wrong Credentials Entered");
                 }
