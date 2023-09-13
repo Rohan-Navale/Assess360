@@ -1,9 +1,13 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class alert  extends JFrame{
+public class Alert extends JFrame{
 RoundedButton proceed;
-    alert(){
+    private JLabel timerLabel;
+    private int secondsRemaining = 60;
+    Alert(){
         setSize(1500, 800); // Set the Frame Size
         getContentPane().setBackground(Color.WHITE);
         setVisible(true);
@@ -73,20 +77,31 @@ RoundedButton proceed;
         panel.setBackground(new Color(202, 237, 255));
         add(panel);
 
-        JCheckBox button = new JCheckBox();
-        button.setText("I have read and understood the instructions");
-        button.setBackground(Color.WHITE);
-        button.setFont(new Font("Raleway",Font.PLAIN,20));
-        button.setBounds(267,570,500,30);
-        add(button);
+        timerLabel = new JLabel("Time Left: " + secondsRemaining + " seconds");
+        timerLabel.setFont(new Font("Raleway", Font.PLAIN, 20));
+        timerLabel.setForeground(Color.RED);
+        timerLabel.setBounds(1200, 25, 300, 40);
+        add(timerLabel);
 
-        proceed = new RoundedButton("Proceed",new Color(216,180,248),Color.BLACK);
-        proceed.setBounds(1096, 580, 163, 44);
-        proceed.setFont(new Font("Raleway", Font.BOLD,20));
-        add(proceed);
+        Timer countdownTimer = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                secondsRemaining--;
+                timerLabel.setText("Time Left: " + secondsRemaining + " seconds");
 
+                if (secondsRemaining <= 0) {
+                    // Time's up, close the frame or perform some action
+                    ((Timer) e.getSource()).stop();
+                    setVisible(false);
+
+                    // Add code to close or hide the frame here if needed.
+                    // For example, setVisible(false);
+                }
+            }
+        });
+        countdownTimer.start();
     }
     public static void main(String[] args) {
-        new alert();
+        new Alert();
     }
 }
