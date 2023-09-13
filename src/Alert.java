@@ -77,6 +77,12 @@ RoundedButton proceed;
         panel.setBackground(new Color(202, 237, 255));
         add(panel);
 
+        JLabel text7 = new JLabel();
+        text7.setText("You will be automatically redirected to test page after time out");
+        text7.setBounds(450,600,1000,30);
+        text7.setFont(new Font("Raleway",Font.BOLD,20));
+        add(text7);
+
         timerLabel = new JLabel("Time Left: " + secondsRemaining + " seconds");
         timerLabel.setFont(new Font("Raleway", Font.PLAIN, 20));
         timerLabel.setForeground(Color.RED);
