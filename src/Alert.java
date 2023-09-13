@@ -96,12 +96,8 @@ RoundedButton proceed;
                 timerLabel.setText("Time Left: " + secondsRemaining + " seconds");
 
                 if (secondsRemaining <= 0) {
-                    // Time's up, close the frame or perform some action
                     ((Timer) e.getSource()).stop();
                     setVisible(false);
-
-                    // Add code to close or hide the frame here if needed.
-                    // For example, setVisible(false);
                 }
             }
         });
