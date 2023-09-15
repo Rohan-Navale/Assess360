@@ -13,6 +13,7 @@ RoundedButton proceed;
         setVisible(true);
         setLocation(0, 0);
         setLayout(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         ImageIcon LogoIcon = new ImageIcon(ClassLoader.getSystemResource("Icons/logo.png")); // Load the image
         Image LogoImage = LogoIcon.getImage();

@@ -13,6 +13,7 @@ public class Login extends JFrame implements ActionListener {
         setVisible(true);
         setLocation(0,0);
         setLayout(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         ImageIcon originalIcon = new ImageIcon(ClassLoader.getSystemResource("Icons/LoginUiICon.png")); // Load the image
         Image originalImage = originalIcon.getImage();
