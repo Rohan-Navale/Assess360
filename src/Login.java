@@ -106,11 +106,12 @@ public class Login extends JFrame implements ActionListener {
             setVisible(false);
             new Register();
         }
-        String susn =  usnField.getText();
-        String spass = PasswordField.getText();
 
         if (ae.getSource() == Login) {
-            if (susn.isEmpty() || spass.isEmpty()) {
+            String susn = usnField.getText();
+            String spass = PasswordField.getText();
+
+            if (susn.equals("USN") || spass.equals("Password")) { // Use isBlank() here
                 JOptionPane.showMessageDialog(null, "Please enter the required details");
             } else {
                 DbConnectivity conn = new DbConnectivity();
