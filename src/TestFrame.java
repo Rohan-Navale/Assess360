@@ -49,9 +49,10 @@ public class TestFrame extends JFrame {
         Timer countdownTimer = new Timer(1000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 secondsRemaining--;
                 timerLabel.setText("Time Left: " + secondsRemaining + " seconds");
-
+                secondsRemaining = 15;
                 if (secondsRemaining <= 0) {
                     ((Timer) e.getSource()).stop();
                     test.moveToNextQuestion();
@@ -101,17 +102,7 @@ public class TestFrame extends JFrame {
             // Display options as radio buttons
             ButtonGroup optionGroup = new ButtonGroup();
             for (int i = 0; i < currentQuestion.getOptions().size(); i++) {
-                JRadioButton optionButton = new JRadioButton(currentQuestion.getOptions().get(i));
-                optionButton.setFont(new Font("Roboto",Font.PLAIN,24));
-                optionButton.setBackground(Color.WHITE);
-                optionButton.setActionCommand(String.valueOf(i));
-                optionButton.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        int selectedOption = Integer.parseInt(e.getActionCommand());
-                        test.checkAnswer(selectedOption);
-                    }
-                });
+                JRadioButton optionButton = getjRadioButton(currentQuestion, i);
                 optionGroup.add(optionButton);
                 questionPanel.add(optionButton);
             }
@@ -125,6 +116,22 @@ public class TestFrame extends JFrame {
             repaint();
         }
     }
+
+    private JRadioButton getjRadioButton(Question currentQuestion, int i) {
+        JRadioButton optionButton = new JRadioButton(currentQuestion.getOptions().get(i));
+        optionButton.setFont(new Font("Roboto",Font.PLAIN,24));
+        optionButton.setBackground(Color.WHITE);
+        optionButton.setActionCommand(String.valueOf(i));
+        optionButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int selectedOption = Integer.parseInt(e.getActionCommand());
+                test.checkAnswer(selectedOption);
+            }
+        });
+        return optionButton;
+    }
+
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
