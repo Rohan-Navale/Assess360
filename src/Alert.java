@@ -99,7 +99,7 @@ RoundedButton proceed;
                 if (secondsRemaining <= 0) {
                     ((Timer) e.getSource()).stop();
                     setVisible(false);
-                    new TestQuestions();
+                    new TestFrame();
                 }
             }
         });
