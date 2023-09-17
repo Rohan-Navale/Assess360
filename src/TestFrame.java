@@ -21,6 +21,7 @@ public class TestFrame extends JFrame {
     private int secondsRemaining = 15;
     private JButton nextButton;
     private JLabel timerLabel;
+    Timer countdownTimer;
     private Test test;
     public TestFrame() {
         // Initialize UI components
@@ -41,22 +42,21 @@ public class TestFrame extends JFrame {
         add(Logolabel);
 
         timerLabel = new JLabel("Time Left: " + secondsRemaining + " seconds");
-        timerLabel.setFont(new Font("Raleway", Font.PLAIN, 20));
+        timerLabel.setFont(new Font("Raleway", Font.BOLD, 20));
         timerLabel.setForeground(Color.RED);
         timerLabel.setBounds(1200, 25, 300, 40);
         add(timerLabel);
 
-        Timer countdownTimer = new Timer(1000, new ActionListener() {
+        countdownTimer = new Timer(1000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
                 secondsRemaining--;
                 timerLabel.setText("Time Left: " + secondsRemaining + " seconds");
-                secondsRemaining = 15;
                 if (secondsRemaining <= 0) {
                     ((Timer) e.getSource()).stop();
                     test.moveToNextQuestion();
                     showCurrentQuestion();
+                    secondsRemaining=15;
                 }
             }
         });
@@ -70,7 +70,6 @@ public class TestFrame extends JFrame {
         add(questionPanel);
 
         nextButton = new JButton("Next");
-
         JPanel buttonPanel = new JPanel();
         buttonPanel.add(nextButton);
         add(buttonPanel, BorderLayout.SOUTH);
@@ -92,6 +91,7 @@ public class TestFrame extends JFrame {
     }
     
     private void showCurrentQuestion() {
+        countdownTimer.start();
         questionPanel.removeAll();
         Question currentQuestion = test.getCurrentQuestion();
         if (currentQuestion != null) {
