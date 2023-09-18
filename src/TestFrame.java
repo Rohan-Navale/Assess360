@@ -77,10 +77,7 @@ public class TestFrame extends JFrame {
         // Create a test with two questions
         test = new Test();
 
-        // Display the first question
         showCurrentQuestion();
-
-        // Add action listeners to navigation buttons
         nextButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
