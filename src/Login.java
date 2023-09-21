@@ -2,9 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 public class Login extends JFrame implements ActionListener {
-
     RoundedTextField usnField, PasswordField;
     JButton Login, Register, forgot;
     Login(){
@@ -124,6 +122,5 @@ public class Login extends JFrame implements ActionListener {
                 }
             }
         }
-
     }
 }
