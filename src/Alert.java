@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 public class Alert extends JFrame{
 RoundedButton proceed;
     private JLabel timerLabel;
