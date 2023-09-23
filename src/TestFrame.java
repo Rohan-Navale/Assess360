@@ -182,7 +182,11 @@ class Test {
                 "Java is a platform-dependent programming language",
                 "Java is a platform-independent programming language"), 4));
 
-
+        questions.add(new Question("Which component is used to compile, debug and execute the java programs?", java.util.Arrays.asList(
+                "JRE",
+                "JIT",
+                "JDK",
+                "JVM"),3));
 
 
 
