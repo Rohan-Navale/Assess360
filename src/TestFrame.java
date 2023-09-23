@@ -180,7 +180,14 @@ class Test {
                 "Java is a sequence-dependent programming language",
                 "Java is a code dependent programming language",
                 "Java is a platform-dependent programming language",
-                "Java is a platform-independent programming language"), 3));
+                "Java is a platform-independent programming language"), 4));
+
+
+
+
+
+
+
 
         currentQuestionIndex = 0;
     }
