@@ -194,10 +194,17 @@ class Test {
                 "Portable",
                 "Dynamic and Extensible"), 2));
 
+        questions.add(new Question("Which of these cannot be used for a variable name in Java?", java.util.Arrays.asList(
+                "Identifier & keyword",
+                "identifier",
+                "keyword",
+                "none of the mentioned"), 3));
 
-
-
-
+        questions.add(new Question("What is the extension of java code files?", java.util.Arrays.asList(
+                ".js",
+                ".txt",
+                ".class",
+                ".java"), 4));
 
         currentQuestionIndex = 0;
     }
