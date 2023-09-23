@@ -188,6 +188,12 @@ class Test {
                 "JDK",
                 "JVM"),3));
 
+        questions.add(new Question("Which one of the following is not a Java feature?", java.util.Arrays.asList(
+                "Object-oriented",
+                "Use of pointers",
+                "Portable",
+                "Dynamic and Extensible"), 2));
+
 
 
 
