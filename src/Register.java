@@ -19,7 +19,6 @@ public class Register extends JFrame implements ActionListener {
         setLocation(0,0);
         setLayout(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-
         ImageIcon LogoIcon = new ImageIcon(ClassLoader.getSystemResource("Icons/logo.png")); // Load the image
         Image LogoImage = LogoIcon.getImage();
         Image LogoscaledImage = LogoImage.getScaledInstance(150, 58, Image.SCALE_SMOOTH);
