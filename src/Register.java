@@ -1,5 +1,3 @@
-
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -27,20 +25,6 @@ public class Register extends JFrame implements ActionListener {
         Logolabel.setBounds(585, 10, 150, 58); // Set the position and size of the JLabel
         add(Logolabel);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
         ImageIcon originalIcon = new ImageIcon(ClassLoader.getSystemResource("Icons/RegisterUiICon.png")); // Load the image
         Image originalImage = originalIcon.getImage();
         Image scaledImage = originalImage.getScaledInstance(524, 514, Image.SCALE_SMOOTH);
