@@ -186,7 +186,7 @@ class Test {
                 "JRE",
                 "JIT",
                 "JDK",
-                "JVM"),3));
+                "JVM"), 3));
 
         questions.add(new Question("Which one of the following is not a Java feature?", java.util.Arrays.asList(
                 "Object-oriented",
@@ -208,16 +208,6 @@ class Test {
 
         currentQuestionIndex = 0;
     }
-
-
-
-
-
-
-
-
-
-
     public Question getCurrentQuestion() {
         if (currentQuestionIndex >= 0 && currentQuestionIndex < questions.size()) {
             return questions.get(currentQuestionIndex);
