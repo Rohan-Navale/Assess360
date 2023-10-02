@@ -45,9 +45,6 @@ public class DbConnectivity {
         return false;
     }
 
-
-
-
     public boolean usnpasswordmatch(String usn, String password) {
         try {
             String sql = "SELECT COUNT(*) FROM login WHERE USN = ? AND password = ?";
